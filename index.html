@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Nhắn Cuối</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Added intro screen with click to start -->
+    <div id="intro-screen" class="intro-screen active">
+        <div class="intro-content">
+            <h1 class="intro-title">Click and turn on your volume</h1>
+            <div class="click-indicator">
+                <div class="pulse-circle"></div>
+                <span>Click anywhere to begin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Added background audio -->
+    <audio id="background-music" loop>
+        <source src="./public/Call of Silence (Ymir's theme) - Attack on Titan S2 OST [Piano]  Hiroyuki Sawano.mp3"
+            type="audio/wav">
+        <!-- Fallback for different audio formats -->
+        <source src="/placeholder.mp3" type="audio/mpeg">
+        <audio id="background-music" loop volume="0.1"></audio>
+    </audio>
+
+    <!-- Trang chính với typewriter effect -->
+    <div id="main-page" class="page">
+        <div class="container">
+            <div class="typewriter-container">
+                <h1 id="typewriter-text" class="typewriter"></h1>
+                <div class="cursor" id="cursor">|</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trang ảnh kỷ niệm với video và lời bài hát -->
+    <div id="memories-page" class="page">
+        <div class="container">
+            <!-- Updated title and layout to match the form -->
+            <h1 class="memories-title">Em đã khóc suốt vào những ngày cuối cùng mình bên nhau khi nghe bài này</h1>
+
+            <!-- Restructured video and lyrics section with new layout -->
+            <div class="music-player-section">
+                <div class="player-container">
+                    <div class="album-cover">
+                        <img src="./public/maxresdefault.jpg" alt="Album Cover">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div class="song-info">
+                        <h3 class="song-title">back to friends</h3>
+                        <p class="artist-name">sombr</p>
+                    </div>
+                    <div class="player-controls">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="control-buttons">
+                            <button class="control-btn"
+                                onclick="window.open('https://www.youtube.com/watch?v=fOQ_-gZsnYQ&list=RDfOQ_-gZsnYQ&start_radio=1', '_blank')">
+                                Listen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lyrics-display">
+                    <div class="lyrics-text">
+                        <p class="lyric-line">It was last December</p>
+                        <p class="lyric-line">You were layin' on my chest</p>
+                        <p class="lyric-line">I still remember</p>
+                        <p class="lyric-line">I was scared to take a breath, didn't want you</p>
+                        <p class="lyric-line">to move your head</p>
+                        <p class="lyric-line">How can we go back to being friends</p>
+                        <p class="lyric-line">When we just shared a bed?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Updated gallery section with horizontal scroll -->
+            <div class="memories-gallery-section">
+                <h2 class="gallery-title">Và một chút ảnh kỷ niệm :></h2>
+                <div class="horizontal-gallery" id="horizontal-gallery">
+                    <div class="memory-card">
+                        <img src="./public/Alb/anh lắp nốt cái xe i.jpg" alt="Kỷ niệm 1">
+                        <div class="memory-title">anh lắp nốt cái xe i</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/bánh sinh nhật em mình làm cùng nhau.jpg" alt="Kỷ niệm 2">
+                        <div class="memory-title">bánh sinh nhật em mình làm cùng nhau</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/Bế con.JPG" alt="Kỷ niệm 3">
+                        <div class="memory-title">Bế con</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/em hông nhớ ra đây là phim gì.jpg" alt="Kỷ niệm 5">
+                        <div class="memory-title">em hông nhớ ra đây là phim gì</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/Giò xanh.jpg" alt="Kỷ niệm 6">
+                        <div class="memory-title">Giò xanh</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/my boys.jpg" alt="Kỷ niệm 6">
+                        <div class="memory-title">my boys</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/mình xoá game này dồi_.jpg" alt="Kỷ niệm 6">
+                        <div class="memory-title">mình xoá game này dồi_</div>
+                    </div>
+
+                    <div class="memory-card">
+                        <img src="./Alb/Sao ôm con mà k ôn em.JPG" alt="Kỷ niệm 6">
+                        <div class="memory-title">Sao ôm con mà k ôn em</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/Tao dỗi rồi .JPG" alt="Kỷ niệm 6">
+                        <div class="memory-title">Tao dỗi rồi </div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/tấm ảnh chung thứ 2.jpg" alt="Kỷ niệm 6">
+                        <div class="memory-title">tấm ảnh chung thứ 2</div>
+                    </div>
+                    <div class="memory-card">
+                        <img src="./Alb/tấm ảnh chung đầu tiên.JPG" alt="Kỷ niệm 6">
+                        <div class="memory-title">tấm ảnh chung đầu tiên</div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span>← Vuốt để xem thêm →</span>
+                </div>
+            </div>
+
+            <!-- Navigation buttons section -->
+            <div class="navigation-section" id="navigation-section">
+                <div class="navigation-buttons">
+                    <button class="nav-btn" id="video-btn">
+                        <div class="btn-icon">📹</div>
+                        <span>CLick here</span>
+                    </button>
+                    <button class="nav-btn" id="message-btn">
+                        <div class="btn-icon">✉️</div>
+                        <span>Click here</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Removed separate navigation page -->
+
+    <!-- Modal hiển thị lời nhắn -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Nội dung sẽ được thêm bằng JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
