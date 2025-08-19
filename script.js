@@ -395,3 +395,54 @@ window.addEventListener("scroll", () => {
     parallax.style.transform = `translateY(${speed}px)`
   }
 })
+
+// Music player logic
+const musicAudio = document.getElementById("music-audio");
+const playBtn = document.getElementById("music-play-btn");
+const playIcon = document.getElementById("music-play-icon");
+const progressBar = document.getElementById("music-progress-bar");
+const progress = document.getElementById("music-progress");
+const currentTimeSpan = document.getElementById("music-current");
+const durationSpan = document.getElementById("music-duration");
+
+function formatTime(seconds) {
+  const min = Math.floor(seconds / 60);
+  const sec = Math.floor(seconds % 60);
+  return `${min}:${sec < 10 ? "0" : ""}${sec}`;
+}
+
+function updateProgress() {
+  if (!musicAudio.duration) return;
+  const percent = (musicAudio.currentTime / musicAudio.duration) * 100;
+  progress.style.width = percent + "%";
+  currentTimeSpan.textContent = formatTime(musicAudio.currentTime);
+  durationSpan.textContent = formatTime(musicAudio.duration);
+}
+
+playBtn.addEventListener("click", () => {
+  if (musicAudio.paused) {
+    musicAudio.play();
+    playIcon.textContent = "⏸";
+  } else {
+    musicAudio.pause();
+    playIcon.textContent = "▶";
+  }
+});
+
+musicAudio.addEventListener("timeupdate", updateProgress);
+musicAudio.addEventListener("loadedmetadata", updateProgress);
+musicAudio.addEventListener("ended", () => {
+  playIcon.textContent = "▶";
+  progress.style.width = "0%";
+  currentTimeSpan.textContent = "0:00";
+});
+
+// Allow clicking progress bar to seek
+progressBar.addEventListener("click", (e) => {
+  const rect = progressBar.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const percent = x / rect.width;
+  if (musicAudio.duration) {
+    musicAudio.currentTime = percent * musicAudio.duration;
+  }
+});

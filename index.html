@@ -48,13 +48,15 @@
                         <p class="artist-name">sombr</p>
                     </div>
                     <div class="player-controls">
-                        <div class="progress-bar">
-                            <div class="progress"></div>
+                        <div class="progress-bar" id="music-progress-bar">
+                            <div class="progress" id="music-progress"></div>
+                        </div>
+                        <div class="music-status">
+                            <span id="music-current">0:00</span> / <span id="music-duration">0:00</span>
                         </div>
                         <div class="control-buttons">
-                            <button class="control-btn"
-                                onclick="window.open('https://www.youtube.com/watch?v=fOQ_-gZsnYQ&list=RDfOQ_-gZsnYQ&start_radio=1', '_blank')">
-                                Listen
+                            <button class="control-btn" id="music-play-btn">
+                                <span id="music-play-icon">▶</span>
                             </button>
                         </div>
                     </div>
@@ -70,6 +72,9 @@
                         <p class="lyric-line">How can we go back to being friends</p>
                         <p class="lyric-line">When we just shared a bed?</p>
                     </div>
+                    <audio id="music-audio"
+                        src="./public/ssvid.net--sombr-back-to-friends-official-audio_128kbps.m4a.mp3" preload="auto"
+                        style="display:none;"></audio>
                 </div>
             </div>
 
