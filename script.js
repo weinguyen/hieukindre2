@@ -356,10 +356,6 @@ function startExperience() {
   if (hasStarted) return
   hasStarted = true
 
-  // Play background music
-  backgroundMusic.play().catch((e) => {
-    console.log("[v0] Audio autoplay blocked:", e)
-  })
 
   // Hide intro screen
   introScreen.classList.remove("active")
