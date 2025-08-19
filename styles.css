@@ -195,15 +195,11 @@ body {
   text-align: center;
   margin-top: 4rem;
   padding: 2rem 0;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
-.navigation-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .navigation-buttons {
   display: flex;

@@ -269,12 +269,10 @@ function setupGalleryScroll() {
 
 // Show navigation section with smooth scroll
 function showNavigationSection() {
+  // No longer needed: navigation-section is always visible
+  // Optionally, you can scroll to navigation-section if needed
   const navigationSection = document.getElementById("navigation-section")
   if (navigationSection) {
-    // Add animation class
-    navigationSection.classList.add('show')
-
-    // Smooth scroll to navigation section
     navigationSection.scrollIntoView({
       behavior: 'smooth',
       block: 'center'
